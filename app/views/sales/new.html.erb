@@ -1,0 +1,49 @@
+<h1>Sales#new</h1>
+<p>Find me in app/views/sales/new.html.erb</p>
+
+
+<%= form_with model: Sale.new, local: true do |f| %>
+
+<div class="form-group">
+
+    <%= f.label :detail, "detail" %>
+    <%= f.text_area :detail, placeholder: 'detalles de la venta' %>
+
+</div>
+
+<div class="form-group">
+
+    <%= f.label :category, "category" %>
+    <%= f.text_field :category, placeholder: 'categoria' %>
+
+</div>
+
+<div class="form-group">
+
+    <%= f.label :value, "value" %>
+    <%= f.number_field :value %>
+
+</div>
+
+<div class="form-group">
+
+    <%= f.label :discount, "discount" %>
+    <%= f.number_field :discount, within:0..100%>
+
+</div>
+
+<div class="form-group">
+
+    <%= f.label :tax, "tax" %>
+    <%= f.check_box :tax %> <%= f.label :tax, "excento de iva" %>
+
+</div>
+
+<div class="form-group">
+    <%= f.submit "create", disable_with: 'creating...' %>
+</div>
+
+
+<%end%>
+
+
